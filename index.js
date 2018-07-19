@@ -16,13 +16,13 @@ const STOP_MESSAGE = 'Goodbye!';
 const FALLBACK_MESSAGE = 'I dont recognize that';
 
 const handlers = {
-    'LaunchRequest': function () {
+    'LaunchRequest': function () [
       var speechOutput = "welcome to the about me skill.";
       speechOutput += "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_trumpet_bugle_03.mp3'>"
       this.response.speak(speechOutput).listen("What would you like to do?");
       this.emit(':responseReady');
     }
-    'NameIntent': function () {
+    'nameIntent': function () {
         var name = this.event.intent.slots.myName.value;
         var speechOutput = "hello " + name + ", what do you like to eat?";
         var speechReprompt = "What do you like to eat?";
@@ -31,7 +31,7 @@ const handlers = {
         },
     },
     'FoodIntent': function () {
-        var food = this.event.request.intent.slots.myFood.value;
+        var = this.event.request.intent.slots.myFood.value;
         if (food = "pizza"){
             speechOutput = "EW. Pizza's pretty gross"
         }
